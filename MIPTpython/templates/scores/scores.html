@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Успеваемость</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+  </head>
+  <body>
+    <div class="container">
+      <header class="d-flex justify-content-center py-3">
+        <ul class="nav nav-pills">
+          <li class="nav-item">
+            <a class="nav-link" href="/tasks/">Задания</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link  active " href="/scores/">Успеваемость</a> 
+
+          </li>
+          <li class="nav-item">
+            <a class="nav-link " aria-current="page" href="/accounts/profile/">Мой профиль</a>
+          </li>
+        </ul>
+      </header>
+    </div>
+
+    <title>Bootstrap Accordion с отступами</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+      .accordion-item {
+        margin-bottom: 10px;
+      }
+    </style>
+  </head>
+  <body>
+
+  <div class="container mt-5">
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Задание</th>
+          <th scope="col">Maксимальный балл</th>
+          <th scope="col">Статус</th>
+          <th scope="col">Ваш балл</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th scope="row">1</th>
+          <td>Контест</td>
+          <td>10</td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <th scope="row">2</th>
+          <td>Проект 1</td>
+          <td>10</td>
+          <td> {% if project_1_status == 'Accepted' %} <span class="badge rounded-pill text-bg-success">Accepted</span> </td>
+          {% elif project_1_status == 'Сhecking' %} <span class="badge rounded-pill text-bg-secondary">Checking</span> </td>
+          {% elif project_1_status == 'Rework' %} <span class="badge rounded-pill text-bg-warning">Rework</span> </td>
+          {% else %} <span class="badge rounded-pill text-bg-danger">Not passed</span>
+          {% endif %} 
+          <td> {{ project_1_score }} </td>
+        </tr>
+        <tr>
+          <th scope="row">3</th>
+          <td>Проект 2</td>
+          <td>10</td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <th scope="row">4</th>
+          <td>Лабораторная работа по анализу данных</td>
+          <td>10</td>
+          <td></td>
+          <td></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+  </body>
+</html>
