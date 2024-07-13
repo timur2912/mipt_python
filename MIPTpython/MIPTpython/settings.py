@@ -26,7 +26,7 @@ SECRET_KEY = "django-insecure-^%$^j@uxw3q6p%rt6&y1cafkl!in3%#8f48xbn$me$2r62&#_h
 DEBUG = True
 
 ALLOWED_HOSTS = ['185.198.152.180']
-
+# ALLOWED_HOSTS = []
 
 # Application definition
 
@@ -127,3 +127,4 @@ DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
 LOGIN_REDIRECT_URL = '/tasks/'
 LOGOUT_REDIRECT_URL = '/accounts/login/'
+
