@@ -1,6 +1,7 @@
 from .forms import SignUpForm
 from django.urls import reverse_lazy
 from django.views import generic
+from .models import Profile
 
 
 class SignUpView(generic.CreateView):
@@ -13,5 +14,5 @@ from django.contrib.auth.decorators import login_required
 
 @login_required
 def profile(request):
-    data = {'user' : request.user}
+    data = {'user' : request.user, 'profile' : Profile.objects.get(user=request.user)}
     return render(request, 'registration/profile.html', context=data)

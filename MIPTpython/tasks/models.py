@@ -15,12 +15,15 @@ class Task(models.Model):
         default='0',
         unique=True,
     )
+
     description_link = models.URLField(max_length=200)
     deadline = models.DateTimeField(blank=True, null=True)
     publish = models.BooleanField(default=False)
 
     def __str__(self):
         return self.task_type
+
+
 
 class Project1(models.Model):
     user_id = models.IntegerField(null=True)
@@ -37,4 +40,11 @@ class Project1(models.Model):
         choices=STATUS_CHOICES,
         default="Сhecking",
     )
+    checker = checker = models.CharField(
+        max_length=30,
+        # choices=CHECKER_CHOICES,
+        default='',
+    )
+
     score = models.FloatField(null=True)
+

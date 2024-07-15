@@ -1,6 +1,6 @@
 
 <!doctype html>
-<html lang="ru">
+<html lang="ru" data-bs-theme="dark">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -42,62 +42,67 @@
   <body>
   
   <div class="container mt-4">
-    <div class="accordion" id="accordionPanelsStayOpenExample">
-      <form>
-        <div class="form-group row">
-          <label for="staticLastName" class="col-sm-2 col-form-label">Фамилия</label>
-          <div class="col-sm-10">
-            <input type="text" readonly class="form-control-plaintext" id="staticLastName" value= {{ user.last_name }}>
-          </div>
-          <label for="staticName" class="col-sm-2 col-form-label">Имя</label>
-          <div class="col-sm-10">
-            <input type="text" readonly class="form-control-plaintext" id="staticName" value= {{ user.first_name }}>
-          </div>
-          <label for="staticGroup" class="col-sm-2 col-form-label">Группа</label>
-          <div class="col-sm-10">
-            <input type="text" readonly class="form-control-plaintext" id="staticGroup" value="">
-          </div>
-          <label for="staticGroup" class="col-sm-2 col-form-label">Поток</label>
-          <div class="col-sm-10">
-            <input type="text" readonly class="form-control-plaintext" id="staticGroup" value="">
-          </div>
 
-          <label for="staticGroup" class="col-sm-2 col-form-label">Семинарист</label>
-          <div class="col-sm-10">
-            <input type="text" readonly class="form-control-plaintext" id="staticGroup" value="">
-          </div>
-          <label for="staticGroup" class="col-sm-2 col-form-label">Проверяющий</label>
-          <div class="col-sm-10">
-            <input type="text" readonly class="form-control-plaintext" id="staticGroup" value="">
-          </div>
 
-          <label for="staticEmail" class="col-sm-2 col-form-label">Email <i class="bi bi-mailbox"></i></label>
-          <div class="col-sm-10">
-            <input type="text" readonly class="form-control-plaintext" id="staticEmail" value={{ user.email }}>
-          </div>
-          <label for="staticGroup" class="col-sm-2 col-form-label">Почта в домене @phystech.edu</label>
-          <div class="col-sm-10">
-            <input type="text" readonly class="form-control-plaintext" id="staticGroup" value="">
-          </div>
-          <label for="staticGroup" class="col-sm-2 col-form-label">Telegram <i class="bi bi-telegram"></i> </label>
-          <div class="col-sm-10">
-            <input type="text" readonly class="form-control-plaintext" id="staticGroup" value="">
-          </div>
-          
-        </div>
-        
-      </form>
-      
+
+    <div class="row">
+      <div class="col">
+          <label for="inputEmail4" class="form-label">Фамилия</label>
+          <input type="email" class="form-control" id="inputEmail4" placeholder= {{ user.last_name }} disabled>
+      </div>
+      <div class="col">
+          <label for="inputEmail4" class="form-label">Имя</label>
+          <input type="email" class="form-control" id="inputEmail4" placeholder= {{ user.first_name }} disabled>
+      </div>
+    </div>
+    
+
+    <div class="row mt-2">
+      <div class="col">
+          <label for="inputEmail4" class="form-label">Группа</label>
+          <input type="email" class="form-control" id="inputEmail4" placeholder= {{ profile.group }} disabled>
+      </div>
+      <div class="col">
+          <label for="inputEmail4" class="form-label">Поток</label>
+          <input type="email" class="form-control" id="inputEmail4" placeholder= {{ profile.flow }} disabled>
+      </div>
+    </div>
+
+
+    <div class="row mt-2">
+      <div class="col">
+          <label for="inputEmail4" class="form-label">Семинарист</label>
+          <input type="email" class="form-control" id="inputEmail4" placeholder= " {{ profile.seminarist }} " disabled>
+      </div>
+      <div class="col">
+          <label for="inputEmail4" class="form-label">Проверяющий </label>
+          <input type="email" class="form-control" id="inputEmail4" placeholder= " {{ profile.checker }} " disabled>
+      </div>
+    </div>
+
+    <div class="row mt-2">
+      <div class="col">
+          <label for="inputEmail4" class="form-label">Почта</label>
+          <input type="email" class="form-control" id="inputEmail4" placeholder= "{{ user.email }}" disabled>
+      </div>
+      <div class="col">
+          <label for="inputEmail4" class="form-label">Почта в домене @phystech.edu</label>
+          <input type="email" class="form-control" id="inputEmail4" placeholder= "" disabled>
+      </div>
+      <div class="col">
+        <label for="inputEmail4" class="form-label">Telegram <i class="bi bi-telegram"></i> </label>
+        <input type="email" class="form-control" id="inputEmail4" placeholder= {{ profile.telegram }} disabled>
+    </div>
     </div>
     <form action="{% url 'logout' %}" method="post">
       {% csrf_token %}
       <a href="#" onclick="parentNode.submit();">Log Out</a>
     </form>
-      
+    
   </div>
 
-    
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
   </body>
+
+  
 </html>
 

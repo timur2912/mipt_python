@@ -2,6 +2,7 @@ from django.shortcuts import render
 from .models import Task, Project1
 from django.contrib.auth.decorators import login_required
 from django.http import HttpResponseRedirect, HttpResponseNotFound
+from accounts.models import Profile
 
 @login_required
 def tasks_list(request):
@@ -32,8 +33,10 @@ def tasks_list(request):
 def create(request):
     if request.method == 'POST':
         project = Project1()
+        user_profile = Profile.objects.get(user=request.user)
         project.user_id = request.user.id
-        project.user_name = request.user.last_name + ' ' + request.user.first_name
+        project.user_name = user_profile.last_name + ' ' + user_profile.first_name
+        project.checker = user_profile.checker
         project.link = request.POST.get('name')
         project.save()
     return HttpResponseRedirect('/tasks/')
