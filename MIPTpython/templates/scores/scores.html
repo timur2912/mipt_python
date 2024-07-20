@@ -50,7 +50,14 @@
           <th scope="row">1</th>
           <td>Контест</td>
           <td>10</td>
-          <td></td>
+          <td>{% if contest.publish and not contest.finished %}
+              <span class="badge rounded-pill text-bg-secondary">Open</span>
+              {% elif contest.finished %}
+              <span class="badge rounded-pill text-bg-secondary">Closed</span>
+              {% else %}
+              <span class="badge rounded-pill text-bg-secondary">Not started</span>
+              {% endif %}
+          </td>
           <td></td>
         </tr>
         <tr>

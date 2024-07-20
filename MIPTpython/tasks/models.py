@@ -19,6 +19,7 @@ class Task(models.Model):
     description_link = models.URLField(max_length=200)
     deadline = models.DateTimeField(blank=True, null=True)
     publish = models.BooleanField(default=False)
+    finished = models.BooleanField(default=False)
 
     def __str__(self):
         return self.task_type
